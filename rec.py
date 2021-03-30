@@ -60,7 +60,7 @@ class my_lprnet(nn.Module):
         out = F.max_pool2d(out1, 3, stride=(1, 1))
         out2 = self.stage2(out)
 
-        out = F.max_pool2d(out2, 3, stride=(1, 2))
+        out = F.max_pool2d(out2, 3, stride=(1, 2))   ###这里可以改成F.max_pool3d，之所以这么写，是为了便于转换生成onnx文件
         out = F.max_pool2d(out.permute(0, 2, 3, 1).contiguous(), 1, stride=(1, 2))
         out = out.permute(0, 3, 1, 2).contiguous()
 
