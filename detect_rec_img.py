@@ -70,7 +70,7 @@ class license_plate_ocr:
         img -= (104, 117, 123)
         with torch.no_grad():
             scale = torch.Tensor([img.shape[1], img.shape[0], img.shape[1], img.shape[0]]).to(device)
-            img = torch.from_numpy(img).permute(2, 0, 1).unsqueeze(0).to(device)
+            img = torch.from_numpy(img).permute(2, 0, 1).unsqueeze(0).to(device)  ###注意输入图片并没有resize到固定尺寸
             loc, conf, landms = self.net(img)  # forward pass
             prior_data = self.priorbox((im_height, im_width)).to(device)
 
