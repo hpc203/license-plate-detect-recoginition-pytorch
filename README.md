@@ -1,5 +1,5 @@
 # license-plate-detect-recoginition-pytorch
-深度学习车牌检测与识别，基于pytorch框架运行，
+深度学习车牌检测与识别，检测结果包含车牌矩形框和4个角点，基于pytorch框架运行，
 主程序是detect_rec_img.py，运行程序前需要确保您的机器安装了pytorch
 
 车牌识别模块，可以更换成crnn网络做识别，也可以更换到传统图像处理方法分割字符后逐个字符识别，
